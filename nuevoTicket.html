@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Seguimiento de Ticket</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex min-h-screen w-full">
+      <!-- SideNavBar -->
+      <aside class="flex flex-col w-64 bg-white/50 dark:bg-white/5 backdrop-blur-lg p-4 border-r border-gray-200 dark:border-gray-800">
+        <div class="flex flex-col justify-between h-full">
+          <div class="flex flex-col gap-4">
+            <div class="flex items-center gap-3 p-2">
+              <div
+                class="avatar bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                data-alt="Avatar de Juan Pérez"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCSb8TO_SuUkuS9P16QYsp0QhYidtKjuEZ32DhxJckIYmp6r4clYTSaU_ZUjccwCkpAGDWeuxft1gVBgrW4q-MxOPBLB16ZvEsyHAues0Uvtq-D5S7Mo_fYSgEnjzqS75fs9vrHue3iYV09mjN2-N4kN29FLw2Vi2tH9Xnw8WmfvObh-KBMKMBkC2S-dzmzvLlOTiGeKkTyG1_5_feVvzLYhDnJ-j5Hs-HnU7N51G-WMQfinb9m6htW88f3Y597s5Wv_HVN_iw8mpU");'
+              ></div>
+
+              <div class="flex flex-col">
+                <h1 class="text-gray-900 dark:text-gray-100 text-base font-medium leading-normal">Juan Pérez</h1>
+                <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Soporte Técnico</p>
+              </div>
+            </div>
+
+            <nav class="flex flex-col gap-2 mt-4" aria-label="Principal">
+              <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700/50" href="#">
+                <span class="material-symbols-outlined text-gray-800 dark:text-gray-200">dashboard</span>
+                <p class="text-sm font-medium leading-normal">Dashboard</p>
+              </a>
+
+              <!-- Tickets con subopciones -->
+              <div>
+                <button
+                  class="w-full flex items-center justify-between gap-3 px-3 py-2 rounded-lg bg-primary/20 text-primary dark:bg-primary dark:text-white"
+                  type="button"
+                >
+                  <span class="flex items-center gap-3">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+                    <p class="text-sm font-medium leading-normal">Tickets</p>
+                  </span>
+                  <span class="material-symbols-outlined">expand_more</span>
+                </button>
+
+                <ul class="mt-2 ml-6 flex flex-col gap-1 text-sm" aria-label="Opciones de Tickets">
+                  <li>
+                    <a class="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+                      <span class="material-symbols-outlined" style="font-size:18px;">build</span>
+                      <span>Servicio técnico</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+                      <span class="material-symbols-outlined" style="font-size:18px;">headset_mic</span>
+                      <span>Soporte remoto</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+                      <span class="material-symbols-outlined" style="font-size:18px;">home</span>
+                      <span>Domicilio</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700/50" href="#">
+                <span class="material-symbols-outlined text-gray-800 dark:text-gray-200">search</span>
+                <p class="text-sm font-medium leading-normal">Consultar Ticket</p>
+              </a>
+
+              <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700/50" href="#">
+                <span class="material-symbols-outlined text-gray-800 dark:text-gray-200">assessment</span>
+                <p class="text-sm font-medium leading-normal">Reportes</p>
+              </a>
+            </nav>
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-wide hover:bg-primary/90">
+              <span class="truncate">Nuevo Ticket</span>
+            </button>
+
+            <div class="flex flex-col gap-1 border-t border-gray-200 dark:border-gray-800 pt-2">
+              <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700/50" href="#">
+                <span class="material-symbols-outlined text-gray-800 dark:text-gray-200">settings</span>
+                <p class="text-sm font-medium leading-normal">Configuración</p>
+              </a>
+              <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700/50" href="#">
+                <span class="material-symbols-outlined text-gray-800 dark:text-gray-200">logout</span>
+                <p class="text-sm font-medium leading-normal">Cerrar Sesión</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-8 overflow-y-auto">
+        <div class="max-w-4xl mx-auto">
+          <!-- PageHeading -->
+          <div class="flex flex-wrap justify-between gap-3 mb-8">
+            <div class="flex min-w-72 flex-col gap-2">
+              <h1 class="text-gray-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Seguimiento de Ticket</h1>
+              <p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">Ingrese el número de ticket para ver su historial y estado actual o complete los datos para registrar un ticket de servicio técnico.</p>
+            </div>
+          </div>
+
+          <!-- Service Ticket Form (sin scripts) -->
+          <div class="bg-white dark:bg-gray-900/50 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm mb-8">
+            <form id="service-ticket-form" class="space-y-6" method="post" action="/tickets/crear">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <label class="flex flex-col">
+                  <p class="text-gray-900 dark:text-gray-100 text-sm font-medium leading-normal pb-2">Tipo de equipo</p>
+                  <select id="equipment-type" name="equipmentType" required class="form-select h-12 rounded-lg border border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 px-4">
+                    <option value="">Seleccione...</option>
+                    <option value="pc">PC</option>
+                    <option value="notebook">Notebook</option>
+                    <option value="impresora">Impresora</option>
+                    <option value="ups">UPS</option>
+                    <option value="dvr">DVR</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                </label>
+
+                <label class="flex flex-col">
+                  <p class="text-gray-900 dark:text-gray-100 text-sm font-medium leading-normal pb-2">Modelo</p>
+                  <input name="model" placeholder="Ej: HP ProDesk 600 G5" class="form-input h-12 rounded-lg border border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 px-4" />
+                </label>
+
+                <label class="flex flex-col">
+                  <p class="text-gray-900 dark:text-gray-100 text-sm font-medium leading-normal pb-2">Número de Serie</p>
+                  <input name="serial" placeholder="Ej: SN12345678" class="form-input h-12 rounded-lg border border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 px-4" />
+                </label>
+
+                <label class="flex flex-col">
+                  <p class="text-gray-900 dark:text-gray-100 text-sm font-medium leading-normal pb-2">Prioridad</p>
+                  <select name="priority" class="form-select h-12 rounded-lg border border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 px-4">
+                    <option value="normal">Normal</option>
+                    <option value="alta">Alta</option>
+                    <option value="critica">Crítica</option>
+                  </select>
+                </label>
+
+                <div class="md:col-span-2">
+                  <p class="text-gray-900 dark:text-gray-100 text-sm font-medium leading-normal pb-2">Accesorios y cables</p>
+                  <div class="flex flex-col sm:flex-row gap-3">
+                    <label class="inline-flex items-center gap-2">
+                      <input type="checkbox" name="cable_data" class="form-checkbox h-4 w-4 rounded" />
+                      <span class="text-gray-700 dark:text-gray-200 text-sm">Viene con cable de datos</span>
+                    </label>
+                    <label class="inline-flex items-center gap-2">
+                      <input type="checkbox" name="cable_power" class="form-checkbox h-4 w-4 rounded" />
+                      <span class="text-gray-700 dark:text-gray-200 text-sm">Viene con cable de corriente</span>
+                    </label>
+                    <label class="inline-flex items-center gap-2">
+                      <input type="checkbox" name="cable_trafo" class="form-checkbox h-4 w-4 rounded" />
+                      <span class="text-gray-700 dark:text-gray-200 text-sm">Viene con trafo</span>
+                    </label>
+                  </div>
+                </div>
+
+                <label id="other-equipment-label" class="flex flex-col md:col-span-2">
+                  <p class="text-gray-900 dark:text-gray-100 text-sm font-medium leading-normal pb-2">Especifique otro tipo de equipo</p>
+                  <input id="other-equipment" name="otherEquipment" placeholder="Describa el equipo" class="form-input h-12 rounded-lg border border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 px-4" />
+                </label>
+
+                <label class="flex flex-col md:col-span-2">
+                  <p class="text-gray-900 dark:text-gray-100 text-sm font-medium leading-normal pb-2">Observaciones</p>
+                  <textarea name="observations" rows="4" placeholder="Detalles, errores mostrados, pasos que provocan la falla" class="form-textarea w-full resize-y rounded-lg border border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 p-4"></textarea>
+                </label>
+              </div>
+
+              <div class="flex justify-end gap-4 pt-4 border-t border-gray-200 dark:border-gray-800">
+                <button type="reset" class="px-6 py-3 rounded-lg text-sm font-semibold bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600">Cancelar</button>
+                <button type="submit" class="px-6 py-3 rounded-lg text-sm font-semibold text-white bg-primary hover:bg-primary/90">Registrar Ticket</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Search Section (conservada) -->
+          <div class="bg-white dark:bg-gray-900/50 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
+            <div class="flex flex-col sm:flex-row items-end gap-4">
+              <label class="flex flex-col w-full sm:w-auto flex-1">
+                <p class="text-gray-900 dark:text-gray-100 text-base font-medium leading-normal pb-2">Número de Ticket</p>
+                <div class="flex w-full flex-1 items-stretch rounded-lg">
+                  <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 h-14 placeholder:text-gray-500 dark:placeholder:text-gray-400 p-[15px] rounded-r-none border-r-0 pr-2 text-base font-normal leading-normal" placeholder="Ej: 12345" value="" />
+                  <div class="text-gray-500 dark:text-gray-400 flex border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 items-center justify-center pr-[15px] rounded-r-lg border-l-0">
+                    <span class="material-symbols-outlined">search</span>
+                  </div>
+                </div>
+              </label>
+
+              <button class="flex w-full sm:w-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
+                <span class="truncate">Buscar Ticket</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Results Section (conservada) -->
+          <div class="mt-10">
+            <h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">Historial del Ticket #12345</h2>
+
+            <div class="relative pl-6 py-4 border-l-2 border-gray-200 dark:border-gray-700">
+              <!-- Timeline items... -->
+              <div class="mb-10">
+                <div class="absolute -left-[13px] top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-green-200 dark:bg-green-900 ring-4 ring-background-light dark:ring-background-dark">
+                  <span class="material-symbols-outlined text-green-700 dark:text-green-300 !text-base">check_circle</span>
+                </div>
+                <div class="ml-4">
+                  <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Ticket Cerrado</h3>
+                  <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">05 de Julio, 2024 - 11:45 AM por Juan Pérez</p>
+                  <p class="text-base text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800/50 p-4 rounded-lg">El problema fue resuelto y el cliente confirmó que el servicio fue restaurado. Se procede a cerrar el ticket.</p>
+                </div>
+              </div>
+
+              <!-- Otros items similares -->
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nuevo Ticket de Soporte Remoto</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#135bec",
+            "background-light": "#f6f6f8",
+            "background-dark": "#101622",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full">
+<!-- SideNavBar -->
+<aside class="flex h-screen flex-col border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 p-4 w-64 sticky top-0">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 p-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Admin user avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3K0hJylOzumlkLqzedQ4C1roDb2elcoFuXbgFScc3_BL4mI7AyrG0EWq7S5v8-sA1VWFGSxQvBfBnp44m3BT3M2N_PC6KRqDCTe-VEr3sOWswHbFcxKtuStwpBmazf-1bLCEAb58m5lP7TkkSyloL5Tgjpe1MQbhhZWt3m7JYEvXJIaELhFeJROVSABphJZl2_A8bQi7-PcTHT2SWUThUt75H7PB_VMAWFJ6CIMMTMOw3W7DkMAM9jrSmnGU6KYNWheb30Tc4ssY');"></div>
+<div class="flex flex-col">
+<h1 class="text-gray-900 dark:text-white text-base font-medium leading-normal">Admin</h1>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">admin@empresa.com</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-primary dark:bg-primary/30" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+<p class="text-sm font-medium leading-normal">Tickets</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg" href="#">
+<span class="material-symbols-outlined">group</span>
+<p class="text-sm font-medium leading-normal">Clientes</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<p class="text-sm font-medium leading-normal">Reportes</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium leading-normal">Configuración</p>
+</a>
+</nav>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-8">
+<div class="max-w-4xl mx-auto">
+<!-- PageHeading -->
+<div class="mb-8">
+<div class="flex flex-col gap-2">
+<h1 class="text-gray-900 dark:text-white text-3xl font-bold tracking-tight">Nuevo Ticket de Soporte Remoto</h1>
+<p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">Complete los detalles a continuación para registrar un nuevo ticket.</p>
+</div>
+</div>
+<!-- Form Container -->
+<div class="bg-white dark:bg-gray-900/50 p-8 rounded-xl border border-gray-200 dark:border-gray-800">
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Customer Name TextField -->
+<label class="flex flex-col">
+<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal pb-2">Nombre del Cliente</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark focus:border-primary dark:focus:border-primary h-12 placeholder:text-gray-500 dark:placeholder:text-gray-400 px-4 rounded-r-none border-r-0 text-base font-normal leading-normal" placeholder="Buscar o ingresar nombre del cliente" value=""/>
+<div class="text-gray-500 dark:text-gray-400 flex border border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark items-center justify-center pr-4 rounded-r-lg border-l-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+</div>
+</label>
+<!-- Request Date TextField -->
+<label class="flex flex-col">
+<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal pb-2">Fecha de la Solicitud</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark focus:border-primary dark:focus:border-primary h-12 placeholder:text-gray-500 dark:placeholder:text-gray-400 px-4 rounded-r-none border-r-0 text-base font-normal leading-normal" type="date" value="2023-10-27"/>
+<div class="text-gray-500 dark:text-gray-400 flex border border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark items-center justify-center pr-4 rounded-r-lg border-l-0">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+</div>
+</label>
+<!-- Requester & Contact Person TextFields -->
+<label class="flex flex-col">
+<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal pb-2">Persona que Solicita</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark focus:border-primary dark:focus:border-primary h-12 placeholder:text-gray-500 dark:placeholder:text-gray-400 px-4 text-base font-normal leading-normal" placeholder="Ej: Juan Pérez" value=""/>
+</label>
+<label class="flex flex-col">
+<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal pb-2">Habló con</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark focus:border-primary dark:focus:border-primary h-12 placeholder:text-gray-500 dark:placeholder:text-gray-400 px-4 text-base font-normal leading-normal" placeholder="Ej: Ana Gómez" value=""/>
+</label>
+</div>
+<!-- Problem Description TextArea -->
+<label class="flex flex-col">
+<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal pb-2">Descripción Detallada del Problema</p>
+<textarea class="form-textarea w-full resize-y rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark focus:border-primary dark:focus:border-primary placeholder:text-gray-500 dark:placeholder:text-gray-400 p-4 text-base font-normal leading-normal min-h-36" placeholder="Sea lo más detallado posible. Incluya mensajes de error, pasos para reproducir el problema, etc."></textarea>
+</label>
+<!-- Action Buttons -->
+<div class="flex justify-end gap-4 pt-4 border-t border-gray-200 dark:border-gray-800">
+<button class="px-6 py-3 rounded-lg text-sm font-semibold bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 dark:focus:ring-offset-background-dark" type="button">Cancelar</button>
+<button class="px-6 py-3 rounded-lg text-sm font-semibold text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark" type="submit">Crear Ticket</button>
+</div>
+</form>
+</div>
+</div>
+</main>
+</div>
+</body></html>

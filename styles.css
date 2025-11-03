@@ -1,0 +1,38 @@
+/* Estilos personalizados separados de index.html */
+
+/* Ajustes para el icono material */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  font-size: 24px;
+}
+
+/* Avatar tamaño consistente */
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+  border-radius: 9999px;
+}
+
+/* Tamaño alternativo si se quiere usar la clase size-10 */
+.size-10 {
+  width: 40px;
+  height: 40px;
+}
+
+/* Pequeñas utilidades para el panel lateral */
+aside nav ul li a span.material-symbols-outlined {
+  opacity: 0.95;
+}
+
+/* Ajustes responsivos o visuales opcionales */
+@media (max-width: 768px) {
+  aside {
+    position: relative;
+    height: auto;
+    width: 100%;
+  }
+}
