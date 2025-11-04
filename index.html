@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Seguimiento de Ticket</title>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="bg-background-light dark:bg-background-dark font-display">
+    <div class="relative flex min-h-screen w-full">
+      <!-- SideNavBar -->
+      <aside class="flex flex-col w-64 bg-white/50 dark:bg-white/5 backdrop-blur-lg p-4 border-r border-gray-200 dark:border-gray-800">
+        <div class="flex flex-col justify-between h-full">
+          <div class="flex flex-col gap-4">
+            <div class="flex items-center gap-3 p-2">
+              <div
+                class="avatar bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                data-alt="Avatar de Juan Pérez"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCSb8TO_SuUkuS9P16QYsp0QhYidtKjuEZ32DhxJckIYmp6r4clYTSaU_ZUjccwCkpAGDWeuxft1gVBgrW4q-MxOPBLB16ZvEsyHAues0Uvtq-D5S7Mo_fYSgEnjzqS75fs9vrHue3iYV09mjN2-N4kN29FLw2Vi2tH9Xnw8WmfvObh-KBMKMBkC2S-dzmzvLlOTiGeKkTyG1_5_feVvzLYhDnJ-j5Hs-HnU7N51G-WMQfinb9m6htW88f3Y597s5Wv_HVN_iw8mpU");'
+              ></div>
+
+              <div class="flex flex-col">
+                <h1 class="text-gray-900 dark:text-gray-100 text-base font-medium leading-normal">Juan Pérez</h1>
+                <p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Soporte Técnico</p>
+              </div>
+            </div>
+
+            <nav class="flex flex-col gap-2 mt-4" aria-label="Principal">
+              <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700/50" href="#">
+                <span class="material-symbols-outlined text-gray-800 dark:text-gray-200">dashboard</span>
+                <p class="text-sm font-medium leading-normal">Dashboard</p>
+              </a>
+
+              <!-- Tickets con subopciones -->
+              <div>
+                <button
+                  class="w-full flex items-center justify-between gap-3 px-3 py-2 rounded-lg bg-primary/20 text-primary dark:bg-primary dark:text-white"
+                  type="button"
+                >
+                  <span class="flex items-center gap-3">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+                    <p class="text-sm font-medium leading-normal">Tickets</p>
+                  </span>
+                  <span class="material-symbols-outlined">expand_more</span>
+                </button>
+
+                <ul class="mt-2 ml-6 flex flex-col gap-1 text-sm" aria-label="Opciones de Tickets">
+                  <li>
+                    <a class="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+                      <span class="material-symbols-outlined" style="font-size:18px;">build</span>
+                      <span>Servicio técnico</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+                      <span class="material-symbols-outlined" style="font-size:18px;">headset_mic</span>
+                      <span>Soporte remoto</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+                      <span class="material-symbols-outlined" style="font-size:18px;">home</span>
+                      <span>Domicilio</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700/50" href="#">
+                <span class="material-symbols-outlined text-gray-800 dark:text-gray-200">search</span>
+                <p class="text-sm font-medium leading-normal">Consultar Ticket</p>
+              </a>
+
+              <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700/50" href="#">
+                <span class="material-symbols-outlined text-gray-800 dark:text-gray-200">assessment</span>
+                <p class="text-sm font-medium leading-normal">Reportes</p>
+              </a>
+            </nav>
+          </div>
+
+          <div class="flex flex-col gap-4">
+            <button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-wide hover:bg-primary/90">
+              <span class="truncate">Nuevo Ticket</span>
+            </button>
+
+            <div class="flex flex-col gap-1 border-t border-gray-200 dark:border-gray-800 pt-2">
+              <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700/50" href="#">
+                <span class="material-symbols-outlined text-gray-800 dark:text-gray-200">settings</span>
+                <p class="text-sm font-medium leading-normal">Configuración</p>
+              </a>
+              <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700/50" href="#">
+                <span class="material-symbols-outlined text-gray-800 dark:text-gray-200">logout</span>
+                <p class="text-sm font-medium leading-normal">Cerrar Sesión</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>

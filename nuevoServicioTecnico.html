@@ -113,7 +113,7 @@
           <!-- PageHeading -->
           <div class="flex flex-wrap justify-between gap-3 mb-8">
             <div class="flex min-w-72 flex-col gap-2">
-              <h1 class="text-gray-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Seguimiento de Ticket</h1>
+              <h1 class="text-gray-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Ticket Servicio Técnico</h1>
               <p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">Ingrese el número de ticket para ver su historial y estado actual o complete los datos para registrar un ticket de servicio técnico.</p>
             </div>
           </div>
@@ -136,7 +136,7 @@
                 </label>
 
                 <label class="flex flex-col">
-                  <p class="text-gray-900 dark:text-gray-100 text-sm font-medium leading-normal pb-2">Modelo</p>
+                  <p class="text-gray-900 dark:text-gray-100 text-sm font-medium leading-normal pb-2">Marca y Modelo</p>
                   <input name="model" placeholder="Ej: HP ProDesk 600 G5" class="form-input h-12 rounded-lg border border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 px-4" />
                 </label>
 
@@ -185,49 +185,10 @@
 
               <div class="flex justify-end gap-4 pt-4 border-t border-gray-200 dark:border-gray-800">
                 <button type="reset" class="px-6 py-3 rounded-lg text-sm font-semibold bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600">Cancelar</button>
-                <button type="submit" class="px-6 py-3 rounded-lg text-sm font-semibold text-white bg-primary hover:bg-primary/90">Registrar Ticket</button>
+                <button type="submit" class="px-6 py-3 rounded-lg text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700">Registrar Ticket</button>
+                <!-- <button type="submit" class="px-6 py-3 rounded-lg text-sm font-semibold text-white bg-primary hover:bg-primary/90">Registrar Ticket</button> -->
               </div>
             </form>
-          </div>
-
-          <!-- Search Section (conservada) -->
-          <div class="bg-white dark:bg-gray-900/50 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm">
-            <div class="flex flex-col sm:flex-row items-end gap-4">
-              <label class="flex flex-col w-full sm:w-auto flex-1">
-                <p class="text-gray-900 dark:text-gray-100 text-base font-medium leading-normal pb-2">Número de Ticket</p>
-                <div class="flex w-full flex-1 items-stretch rounded-lg">
-                  <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 h-14 placeholder:text-gray-500 dark:placeholder:text-gray-400 p-[15px] rounded-r-none border-r-0 pr-2 text-base font-normal leading-normal" placeholder="Ej: 12345" value="" />
-                  <div class="text-gray-500 dark:text-gray-400 flex border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 items-center justify-center pr-[15px] rounded-r-lg border-l-0">
-                    <span class="material-symbols-outlined">search</span>
-                  </div>
-                </div>
-              </label>
-
-              <button class="flex w-full sm:w-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide hover:bg-primary/90 transition-colors">
-                <span class="truncate">Buscar Ticket</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Results Section (conservada) -->
-          <div class="mt-10">
-            <h2 class="text-gray-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">Historial del Ticket #12345</h2>
-
-            <div class="relative pl-6 py-4 border-l-2 border-gray-200 dark:border-gray-700">
-              <!-- Timeline items... -->
-              <div class="mb-10">
-                <div class="absolute -left-[13px] top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-green-200 dark:bg-green-900 ring-4 ring-background-light dark:ring-background-dark">
-                  <span class="material-symbols-outlined text-green-700 dark:text-green-300 !text-base">check_circle</span>
-                </div>
-                <div class="ml-4">
-                  <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Ticket Cerrado</h3>
-                  <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">05 de Julio, 2024 - 11:45 AM por Juan Pérez</p>
-                  <p class="text-base text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800/50 p-4 rounded-lg">El problema fue resuelto y el cliente confirmó que el servicio fue restaurado. Se procede a cerrar el ticket.</p>
-                </div>
-              </div>
-
-              <!-- Otros items similares -->
-            </div>
           </div>
         </div>
       </main>
