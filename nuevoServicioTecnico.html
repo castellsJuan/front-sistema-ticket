@@ -3,17 +3,46 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Seguimiento de Ticket</title>
+    <title>nuevo servicio técnico</title>
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-
-    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#135bec",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        font-size: 24px;
+      }
+    </style>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        font-size: 24px;
+      }
+    </style>
   </head>
 
   <body class="bg-background-light dark:bg-background-dark font-display">
@@ -56,13 +85,13 @@
 
                 <ul class="mt-2 ml-6 flex flex-col gap-1 text-sm" aria-label="Opciones de Tickets">
                   <li>
-                    <a class="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+                    <a class="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="nuevoServicioTecnico.html">
                       <span class="material-symbols-outlined" style="font-size:18px;">build</span>
                       <span>Servicio técnico</span>
                     </a>
                   </li>
                   <li>
-                    <a class="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+                    <a class="flex items-center gap-2 px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800" href="nuevoSoporteRemoto.html">
                       <span class="material-symbols-outlined" style="font-size:18px;">headset_mic</span>
                       <span>Soporte remoto</span>
                     </a>
@@ -113,8 +142,63 @@
           <!-- PageHeading -->
           <div class="flex flex-wrap justify-between gap-3 mb-8">
             <div class="flex min-w-72 flex-col gap-2">
-              <h1 class="text-gray-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Ticket Servicio Técnico</h1>
-              <p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">Ingrese el número de ticket para ver su historial y estado actual o complete los datos para registrar un ticket de servicio técnico.</p>
+              <h1 class="text-gray-900 dark:text-white text-3xl font-bold tracking-tight">Ticket Servicio Técnico</h1>
+              <p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">Completá los datos para registrar un ticket de servicio técnico.</p>
+            </div>
+          </div>
+
+          <!-- Client Search Form -->
+          <div class="bg-white dark:bg-gray-900/50 p-6 rounded-xl border border-gray-200 dark:border-gray-800 shadow-sm mb-4">
+            <div class="flex flex-col gap-4">
+              <h2 class="text-gray-900 dark:text-gray-100 text-lg font-semibold">Buscar Cliente</h2>
+              <div class="flex gap-4">
+                <div class="flex-1">
+                  <input
+                    type="text"
+                    id="client-search"
+                    placeholder="Buscar por DNI o nombre del cliente (87654321)"
+                    class="w-full h-12 rounded-lg border border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 px-4"
+                  />
+                </div>
+                <button
+                  type="button"
+                  id="search-client-btn"
+                  class="px-6 h-12 rounded-lg text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 flex items-center gap-2"
+                >
+                  <span class="material-symbols-outlined">search</span>
+                  Buscar
+                </button>
+              </div>
+
+              <!-- Client Data Display (initially hidden) -->
+              <div id="client-data" class="hidden border-t border-gray-200 dark:border-gray-800 pt-4 mt-2">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Nombre completo</p>
+                    <p id="client-name" class="text-gray-900 dark:text-gray-100 font-medium"></p>
+                  </div>
+                  <div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">DNI</p>
+                    <p id="client-dni" class="text-gray-900 dark:text-gray-100 font-medium"></p>
+                  </div>
+                  <div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Email</p>
+                    <p id="client-email" class="text-gray-900 dark:text-gray-100 font-medium"></p>
+                  </div>
+                  <div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Teléfono</p>
+                    <p id="client-phone" class="text-gray-900 dark:text-gray-100 font-medium"></p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Loading State -->
+              <div id="search-loading" class="hidden items-center justify-center py-4">
+                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+              </div>
+
+              <!-- Error Message -->
+              <div id="search-error" class="hidden text-red-500 dark:text-red-400 text-sm"></div>
             </div>
           </div>
 
@@ -159,15 +243,15 @@
                   <div class="flex flex-col sm:flex-row gap-3">
                     <label class="inline-flex items-center gap-2">
                       <input type="checkbox" name="cable_data" class="form-checkbox h-4 w-4 rounded" />
-                      <span class="text-gray-700 dark:text-gray-200 text-sm">Viene con cable de datos</span>
+                      <span class="text-gray-700 dark:text-gray-200 text-sm">cable de datos</span>
                     </label>
                     <label class="inline-flex items-center gap-2">
                       <input type="checkbox" name="cable_power" class="form-checkbox h-4 w-4 rounded" />
-                      <span class="text-gray-700 dark:text-gray-200 text-sm">Viene con cable de corriente</span>
+                      <span class="text-gray-700 dark:text-gray-200 text-sm">cable de corriente</span>
                     </label>
                     <label class="inline-flex items-center gap-2">
                       <input type="checkbox" name="cable_trafo" class="form-checkbox h-4 w-4 rounded" />
-                      <span class="text-gray-700 dark:text-gray-200 text-sm">Viene con trafo</span>
+                      <span class="text-gray-700 dark:text-gray-200 text-sm">trafo</span>
                     </label>
                   </div>
                 </div>
@@ -178,7 +262,7 @@
                 </label>
 
                 <label class="flex flex-col md:col-span-2">
-                  <p class="text-gray-900 dark:text-gray-100 text-sm font-medium leading-normal pb-2">Observaciones</p>
+                  <p class="text-gray-900 dark:text-gray-100 text-sm font-medium leading-normal pb-2">Problema. Observaciones</p>
                   <textarea name="observations" rows="4" placeholder="Detalles, errores mostrados, pasos que provocan la falla" class="form-textarea w-full resize-y rounded-lg border border-gray-300 dark:border-gray-700 bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 p-4"></textarea>
                 </label>
               </div>
@@ -193,5 +277,104 @@
         </div>
       </main>
     </div>
+
+    <script>
+      // Mock client database
+      const mockClients = [
+        {
+          dni: '12345678',
+          name: 'Ana García',
+          email: 'ana.garcia@email.com',
+          phone: '(011) 1234-5678'
+        },
+        {
+          dni: '87654321',
+          name: 'Carlos López',
+          email: 'carlos.lopez@email.com',
+          phone: '(011) 8765-4321'
+        }
+      ];
+
+      // DOM Elements
+      const searchInput = document.getElementById('client-search');
+      const searchButton = document.getElementById('search-client-btn');
+      const clientDataDiv = document.getElementById('client-data');
+      const loadingDiv = document.getElementById('search-loading');
+      const errorDiv = document.getElementById('search-error');
+
+      // Client data elements
+      const clientName = document.getElementById('client-name');
+      const clientDni = document.getElementById('client-dni');
+      const clientEmail = document.getElementById('client-email');
+      const clientPhone = document.getElementById('client-phone');
+
+      // Search functionality
+      searchButton.addEventListener('click', async () => {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        if (!searchTerm) {
+          showError('Por favor ingrese un DNI o nombre para buscar');
+          return;
+        }
+
+        // Show loading
+        showLoading();
+
+        try {
+          // Simulate API call
+          await new Promise(resolve => setTimeout(resolve, 1000));
+
+          const client = mockClients.find(
+            c => c.dni.includes(searchTerm) || c.name.toLowerCase().includes(searchTerm)
+          );
+
+          if (client) {
+            displayClientData(client);
+          } else {
+            showError('Cliente no encontrado');
+          }
+        } catch (error) {
+          showError('Error al buscar cliente');
+        } finally {
+          hideLoading();
+        }
+      });
+
+      // Helper functions
+      function displayClientData(client) {
+        clientName.textContent = client.name;
+        clientDni.textContent = client.dni;
+        clientEmail.textContent = client.email;
+        clientPhone.textContent = client.phone;
+
+        errorDiv.classList.add('hidden');
+        clientDataDiv.classList.remove('hidden');
+      }
+
+      function showError(message) {
+        errorDiv.textContent = message;
+        errorDiv.classList.remove('hidden');
+        clientDataDiv.classList.add('hidden');
+      }
+
+      function showLoading() {
+        loadingDiv.classList.remove('hidden');
+        loadingDiv.classList.add('flex');
+        errorDiv.classList.add('hidden');
+        clientDataDiv.classList.add('hidden');
+      }
+
+      function hideLoading() {
+        loadingDiv.classList.add('hidden');
+        loadingDiv.classList.remove('flex');
+      }
+
+      // También permitir buscar con Enter
+      searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          searchButton.click();
+        }
+      });
+    </script>
   </body>
 </html>
